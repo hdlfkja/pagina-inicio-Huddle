@@ -1,0 +1,127 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer {
+    background-color: v.$cianOscuro;
+    padding: 14rem 2rem 0rem;
+
+    @include m.tablet {
+        padding: 14rem 10rem 3rem 10rem;
+
+    }
+
+    .logo-blanco {
+        width: 18rem;
+        margin-bottom: 2rem;
+
+        @include m.tablet {
+            margin-bottom: 4rem;
+        }
+    }
+
+}
+
+.footer-flex {
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr;
+        column-gap: 8rem;
+    }
+}
+
+.iconos {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+
+    .iconos-icono {
+        width: auto;
+        margin-top: .5rem;
+
+    }
+
+    .iconos-texto {
+        color: v.$cianPalido;
+    }
+}
+
+.navegacion {
+    margin-top: 4rem;
+
+    @include m.tablet {        
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+
+.navegacion-enlaces {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+    @include m.tablet {
+        margin: 0;
+    }
+
+    a {
+        display: inline-block;
+        color: v.$cianPalido;
+        font-size: 2rem;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &:last-child {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+.redes {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin: 2rem 0;
+
+    @include m.tablet {
+        margin-top: 0;
+    }
+
+    .redes-icono {
+        border: 1px solid v.$cianPalido;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        font-size: 2rem;
+        
+        &:hover {
+            border-color: v.$rosa;
+        }
+        
+        .facebook, .twitter, .instagram {
+            color: white;
+            padding: .5rem;
+
+            &:hover {
+                color: v.$rosa;
+            }
+        }
+
+    }
+}
+
+.copyrigth {
+    color: v.$cianPalido;
+    font-size: 1.2rem;
+    padding-bottom: 4rem;
+    text-align: center;
+
+    @include m.tablet {
+        padding-bottom: 2.5rem;
+        text-align: end;
+    }
+}

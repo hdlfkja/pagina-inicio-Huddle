@@ -1,0 +1,125 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: v.$fuenteParrafos;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 4rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h1,
+h2 {
+    font-family: v.$fuenteEncabezados;
+    text-align: center;
+}
+
+p {
+    line-height: 2.5rem;
+    font-size: 1.7rem;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.contenedor-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedor {
+    box-shadow: 0px 0px 10px v.$gris;
+    width: 90%;
+    border-radius: 4%;
+    -webkit-border-radius: 4%;
+    -moz-border-radius: 4%;
+    -ms-border-radius: 4%;
+    -o-border-radius: 4%;
+    padding: 4rem 4.5rem;
+    margin-bottom: 4rem;
+
+    @include m.tablet {
+        border-radius: 1%;
+        -webkit-border-radius: 1%;
+        -moz-border-radius: 1%;
+        -ms-border-radius: 1%;
+        -o-border-radius: 1%;
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 10rem;
+        padding: 4rem 1.5rem 4rem 10rem;
+
+        &:nth-child(2) {
+            flex-direction: unset;
+        }
+
+        &:last-child {
+            padding: 5rem 0;
+            width: 50%;
+            flex-direction: column;
+            gap: 0;
+            border-radius: 3%;
+            -webkit-border-radius: 3%;
+            -moz-border-radius: 3%;
+            -ms-border-radius: 3%;
+            -o-border-radius: 3%;
+        }
+    }
+
+    &:last-child {
+        margin-top: 8rem;
+        margin-bottom: -7rem;
+        box-shadow: 0px -4px 10px -4px v.$gris;
+    }
+}
+
+.boton {
+    width: 80%;
+    display: inline-block;
+    padding: 1.2rem 0 1.5rem;
+    background-color: v.$rosa;
+    border-radius: 3rem;
+    -webkit-border-radius: 3rem;
+    -moz-border-radius: 3rem;
+    -ms-border-radius: 3rem;
+    -o-border-radius: 3rem;
+    margin-bottom: 6rem;
+    color: v.$cianPalido;
+    font-weight: bold;
+    text-align: center;
+
+    @include m.tablet {
+        padding: 1.5rem;
+        width: max(45%, 17rem);
+    }
+
+    &:hover {
+        background-color: v.$rosaTransparente;
+    }
+}
